@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30803.129
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeezerAPI", "DeezerAPI\DeezerAPI.csproj", "{79FB8983-F44F-4BE4-A7F5-F9DD5B27E270}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeezerAPI.Test", "..\DeezerAPI.Test\DeezerAPI.Test.csproj", "{4CE1BCAC-1698-427C-9EDC-0F7BE190A57A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79FB8983-F44F-4BE4-A7F5-F9DD5B27E270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79FB8983-F44F-4BE4-A7F5-F9DD5B27E270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79FB8983-F44F-4BE4-A7F5-F9DD5B27E270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79FB8983-F44F-4BE4-A7F5-F9DD5B27E270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CE1BCAC-1698-427C-9EDC-0F7BE190A57A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CE1BCAC-1698-427C-9EDC-0F7BE190A57A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CE1BCAC-1698-427C-9EDC-0F7BE190A57A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CE1BCAC-1698-427C-9EDC-0F7BE190A57A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D6B11AB-D7BA-4B94-B6EA-A7816005B23D}
+	EndGlobalSection
+EndGlobal
