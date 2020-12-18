@@ -68,7 +68,7 @@ namespace DeezerAPI.Private
         {
             WebClient webClient = new WebClient();
             // Prepare WebClient for Requests
-            webClient.Headers.Add("User-Agent", Constants.UserAgent);
+            webClient.Headers.Add("User-Agent", PrivateConstants.UserAgent);
             webClient.Headers.Add("cache-control", "no-cache");
             webClient.Headers.Add("accept-language", "en-US,en;q=0.9");
             webClient.Headers.Add("accept-charset", "utf-8,ISO-8859-1;q=0.8,*;q=0.7");
@@ -85,10 +85,10 @@ namespace DeezerAPI.Private
         public async Task InitializeAPIAsync()
         {
             WebClient webClient = SetupWebClient();
-            string json = await webClient.UploadStringTaskAsync(Constants.PrivateAPI + "?" + Constants.method + Methods.UserData + "&"
-                                                                  + Constants.api_version + "&"
-                                                                  + Constants.api_input + "&" + Constants.api_token + string.Empty + "&"
-                                                                  + Constants.cid + GenCid(), string.Empty);
+            string json = await webClient.UploadStringTaskAsync(PrivateConstants.PrivateAPI + "?" + PrivateConstants.method + Methods.UserData + "&"
+                                                                  + PrivateConstants.api_version + "&"
+                                                                  + PrivateConstants.api_input + "&" + PrivateConstants.api_token + string.Empty + "&"
+                                                                  + PrivateConstants.cid + GenCid(), string.Empty);
             webClient.Dispose();
             var data = JsonConvert.DeserializeObject<dynamic>(json);
 
@@ -113,10 +113,10 @@ namespace DeezerAPI.Private
             WebClient webClient = SetupWebClient();
             webClient.Headers.Add("cookie", ";sid=" + CSRF);
 
-            string json = await webClient.UploadStringTaskAsync(Constants.PrivateAPI + "?" + Constants.method + request + "&"
-                                                                  + Constants.api_version + "&"
-                                                                  + Constants.api_input + "&" + Constants.api_token + APIKey ?? string.Empty + "&"
-                                                                  + Constants.cid + GenCid(), payload ?? string.Empty);
+            string json = await webClient.UploadStringTaskAsync(PrivateConstants.PrivateAPI + "?" + PrivateConstants.method + request + "&"
+                                                                  + PrivateConstants.api_version + "&"
+                                                                  + PrivateConstants.api_input + "&" + PrivateConstants.api_token + APIKey ?? string.Empty + "&"
+                                                                  + PrivateConstants.cid + GenCid(), payload ?? string.Empty);
             webClient.Dispose();
             return json;
         }
