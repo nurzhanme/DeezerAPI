@@ -1,5 +1,4 @@
-﻿using DeezerAPI.Mobile;
-using DeezerAPI.Mobile.Models.Album;
+﻿using DeezerAPI.Mobile.Models.Album;
 using DeezerAPI.Mobile.Models.Lyrics;
 using DeezerAPI.Mobile.Models.Playlist;
 using DeezerAPI.Mobile.Models.Track;
