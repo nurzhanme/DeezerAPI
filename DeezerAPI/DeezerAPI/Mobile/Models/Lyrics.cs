@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace DeezerAPI.Mobile.Models
+namespace DeezerAPI.Mobile.Models.Lyrics
 {
     public partial class Lyrics
     {

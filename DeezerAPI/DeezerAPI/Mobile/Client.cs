@@ -1,8 +1,10 @@
 ﻿using DeezerAPI.Mobile.Models;
 using DeezerAPI.Mobile.Models.Album;
+using DeezerAPI.Mobile.Models.Lyrics;
 using DeezerAPI.Mobile.Models.Track;
 using DeezerAPI.Private;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
@@ -10,7 +12,7 @@ using Playlist = DeezerAPI.Mobile.Models.Playlist.Playlist;
 
 namespace DeezerAPI.Mobile
 {
-    public class Client
+    public class Client : IUnauthenticatedMobileAPI, IAuthenticatedMobileAPI
     {
         private WebClient webClient;
         private string SID;
@@ -20,6 +22,10 @@ namespace DeezerAPI.Mobile
         {
             webClient = new WebClient();
             webClient.Headers.Add("User-Agent", MobileConstants.UserAgent);
+            if (this.GetType() == typeof(IAuthenticatedMobileAPI))
+            {
+                throw new Exception("Authenticated Deezer API must provide ARL Cookie");
+            }
         }
 
         public Client(string arl)
