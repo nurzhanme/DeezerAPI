@@ -9,7 +9,7 @@ namespace DeezerAPI
     /// <summary>
     /// Mobile Deezer API
     /// </summary>
-    class Mobile
+    class MobileAPI
     {
     }
 }
