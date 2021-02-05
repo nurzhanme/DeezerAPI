@@ -77,6 +77,12 @@ namespace DeezerAPI.Mobile
             return JsonConvert.DeserializeObject<Tracks>(res);
         }
 
+        public async Task<Lyrics> GetTrackLyrics(string SongID)
+        {
+            var res = await Request(Methods.GetLyrics, JsonConvert.SerializeObject(new RequestTrack() { TrackID = SongID }));
+            return JsonConvert.DeserializeObject<Lyrics>(res);
+        }
+
         public async Task<Album> GetAlbum(string AlbumID)
         {
             var res = await Request(Methods.GetAlbum, JsonConvert.SerializeObject(new RequestAlbum() { AlbumID = AlbumID }));
