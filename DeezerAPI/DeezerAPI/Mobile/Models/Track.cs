@@ -19,6 +19,12 @@ namespace DeezerAPI.Mobile.Models.Track
         public List<object> Error { get; set; }
 
         [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
+        public Data Results { get; set; }
+    }
+
+    public partial class Data
+    {
+        [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public List<Results> Results { get; set; }
     }
 
