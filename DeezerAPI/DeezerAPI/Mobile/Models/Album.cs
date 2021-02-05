@@ -112,7 +112,7 @@ namespace DeezerAPI.Mobile.Models.Album
         public long? Rank { get; set; }
 
         [JsonProperty("LOCALES", NullValueHandling = NullValueHandling.Ignore)]
-        public Locales Locales { get; set; }
+        public dynamic? Locales { get; set; }
 
         [JsonProperty("ARTIST_IS_DUMMY", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ArtistIsDummy { get; set; }
@@ -124,19 +124,19 @@ namespace DeezerAPI.Mobile.Models.Album
     public partial class Locales
     {
         [JsonProperty("lang_ja-jpan", NullValueHandling = NullValueHandling.Ignore)]
-        public Lang LangJaJpan { get; set; }
+        public Lang? LangJaJpan { get; set; }
 
         [JsonProperty("lang_ja-hrkt", NullValueHandling = NullValueHandling.Ignore)]
-        public Lang LangJaHrkt { get; set; }
+        public Lang? LangJaHrkt { get; set; }
 
         [JsonProperty("lang_zh-hant", NullValueHandling = NullValueHandling.Ignore)]
-        public Lang LangZhHant { get; set; }
+        public Lang? LangZhHant { get; set; }
     }
 
     public partial class Lang
     {
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
     }
 
     public partial class ExplicitAlbumContent
