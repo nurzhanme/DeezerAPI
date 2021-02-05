@@ -1,4 +1,4 @@
-﻿using DeezerAPI.Mobile.Models;
+﻿using DeezerAPI.Mobile.Models.Lyrics;
 using System.Threading.Tasks;
 using Xunit;
 
