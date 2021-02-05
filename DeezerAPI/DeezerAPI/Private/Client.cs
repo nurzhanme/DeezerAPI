@@ -54,7 +54,7 @@ namespace DeezerAPI.Private
         /// Generate Request CID for a Deezer API Request
         /// </summary>
         /// <returns></returns>
-        public int GenCid()
+        public static int GenCid()
         {
             Random rnd = new Random();
             return rnd.Next(100000000, 999999999);

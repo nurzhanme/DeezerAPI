@@ -2,7 +2,8 @@
 {
     internal class Methods
     {
-        public const string Playlist = "playlist.getData";
+        public const string UserData = "deezer.getUserData";
+        public const string GetPlaylist = "playlist.getData";
         /// <summary>
         /// Get Deezer Track Options
         /// </summary>
