@@ -14,11 +14,19 @@ namespace DeezerAPI.Mobile
     {
         private WebClient webClient;
         private string SID;
+        private string ARL = string.Empty;
 
         public Client()
         {
             webClient = new WebClient();
             webClient.Headers.Add("User-Agent", MobileConstants.UserAgent);
+        }
+
+        public Client(string arl)
+        {
+            webClient = new WebClient();
+            webClient.Headers.Add("User-Agent", MobileConstants.UserAgent);
+            ARL = arl;
         }
 
         public string GetSID()
@@ -29,6 +37,13 @@ namespace DeezerAPI.Mobile
         public async Task GenerateSID()
         {
             WebClient webClient = new WebClient();
+
+            // To Generating a Authenticated SID to get the Track MD5
+            if (!string.IsNullOrWhiteSpace(ARL))
+            {
+                webClient.Headers.Add("cookie", "arl=" + ARL);
+            }
+
             string json = await webClient.UploadStringTaskAsync(PrivateConstants.PrivateAPI + "?" + PrivateConstants.method + Methods.UserData + "&"
                                                                   + PrivateConstants.api_version + "&"
                                                                   + PrivateConstants.api_input + "&" + PrivateConstants.api_token + string.Empty + "&"
