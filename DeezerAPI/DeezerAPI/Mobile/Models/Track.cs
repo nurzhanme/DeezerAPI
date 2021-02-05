@@ -133,7 +133,7 @@ namespace DeezerAPI.Mobile.Models.Track
         public long? Filesize { get; set; }
 
         [JsonProperty("GAIN", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Gain { get; set; }
+        public float? Gain { get; set; }
 
         [JsonProperty("MEDIA_VERSION", NullValueHandling = NullValueHandling.Ignore)]
         public long? MediaVersion { get; set; }
