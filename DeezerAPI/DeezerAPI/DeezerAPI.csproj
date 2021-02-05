@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Authors>BackInBash</Authors>
+    <Version>1.1.0</Version>
+    <Copyright>BackInBash 2021</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
