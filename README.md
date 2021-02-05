@@ -124,4 +124,44 @@ var data = await deezer.Search(
 ## DeezerAPI.Mobile
 The Mobile Deezer API Implementation
 
+### Getting started
+
+**Create Unauthenticated API Client**
+```csharp
+IUnauthenticatedMobileAPI deezer = new MobileAPI();
+```
+
+> An Unauthenticated Deezer API must call `await GenerateSID()` first!
+
+**Create Authenticated API Client**
+```csharp
+IAuthenticatedMobileAPI deezer = new MobileAPI(arl);
+```
+
+### Get Track Infos
+```csharp
+var trackInfos = await deezer.GetTrack(SNG_ID);
+```
+
+### Get Tracks
+```csharp
+List<string> IDs = new List<string>(){ "111", "222", "333" };
+var trackInfos = await deezer.GetTracks(IDs);
+```
+
+### Get Track Lyrics
+```csharp
+var trackLyrics = await deezer.GetTrackLyrics(SNG_ID);
+```
+
+### Get Album Infos
+```csharp
+var albInfos = await deezer.GetAlbum(ALB_ID);
+```
+
+### Get Playlist Infos
+```csharp
+var playlistInfos = await deezer.GetPlaylist(Playlist_ID);
+```
+
 ## Build with dotNET 5.0 & VS 2019
