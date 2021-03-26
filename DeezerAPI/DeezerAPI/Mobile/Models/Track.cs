@@ -54,9 +54,6 @@ namespace DeezerAPI.Mobile.Models.Track
         [JsonProperty("ART_PICTURE", NullValueHandling = NullValueHandling.Ignore)]
         public string ArtPicture { get; set; }
 
-        [JsonProperty("DATE_START", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTimeOffset? DateStart { get; set; }
-
         [JsonProperty("DISK_NUMBER", NullValueHandling = NullValueHandling.Ignore)]
         public long? DiskNumber { get; set; }
 
@@ -238,13 +235,13 @@ namespace DeezerAPI.Mobile.Models.Track
         public bool? StreamAdsAvailable { get; set; }
 
         [JsonProperty("STREAM_ADS", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTimeOffset? StreamAds { get; set; }
+        public DateTime? StreamAds { get; set; }
 
         [JsonProperty("STREAM_SUB_AVAILABLE", NullValueHandling = NullValueHandling.Ignore)]
         public bool? StreamSubAvailable { get; set; }
 
         [JsonProperty("STREAM_SUB", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTimeOffset? StreamSub { get; set; }
+        public DateTime? StreamSub { get; set; }
     }
 
     public partial class SngContributors
