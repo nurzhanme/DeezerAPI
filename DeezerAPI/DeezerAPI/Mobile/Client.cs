@@ -1,7 +1,7 @@
 ﻿using DeezerAPI.Mobile.Models;
 using DeezerAPI.Mobile.Models.Album;
 using DeezerAPI.Mobile.Models.Lyrics;
-using DeezerAPI.Mobile.Models.Track;
+using DeezerAPI.Models;
 using DeezerAPI.Private;
 using Newtonsoft.Json;
 using System;
@@ -71,16 +71,57 @@ namespace DeezerAPI.Mobile
             return json;
         }
 
-        public async Task<Track> GetTrack(string SongID)
+        public async Task<Metadata> GetTrack(string SongID)
         {
             var res = await Request(Methods.GetTrack, JsonConvert.SerializeObject(new RequestTrack() { TrackID = SongID }));
-            return JsonConvert.DeserializeObject<Track>(res);
+
+            Metadata track = new Metadata();
+
+            var data = JsonConvert.DeserializeObject<dynamic>(res);
+
+            track.MD5 = data.results.MD5_ORIGIN;
+            track.MediaVersion = data.results.MEDIA_VERSION;
+            track.Quality = (int)Quality.FLAC;
+            track.id = data.results.SNG_ID;
+            track.title = data.results.SNG_TITLE;
+            track.artist = data.results.ART_NAME;
+            track.duration = data.results.DURATION;
+            track.genre = new string[0];
+            track.albumart = data.results.ALB_PICTURE;
+            track.year = data.results.PHYSICAL_RELEASE_DATE;
+            track.album = data.results.ALB_TITLE;
+            track.date = data.results.PHYSICAL_RELEASE_DATE;
+            track.isrc = data.results.ISRC;
+
+            return track;
         }
 
-        public async Task<Tracks> GetTracks(List<string> SongIDs)
+        public async Task<List<Metadata>> GetTracks(List<string> SongIDs)
         {
             var res = await Request(Methods.GetTracks, JsonConvert.SerializeObject(new RequestTracks() { TrackIDs = SongIDs }));
-            return JsonConvert.DeserializeObject<Tracks>(res);
+            var data = JsonConvert.DeserializeObject<dynamic>(res);
+            List<Metadata> mdata = new List<Metadata>();
+
+            foreach(var track in data.results.data)
+            {
+                Metadata mtrack = new Metadata();
+                mtrack.MD5 = track.MD5_ORIGIN;
+                mtrack.MediaVersion = track.MEDIA_VERSION;
+                mtrack.Quality = (int)Quality.FLAC;
+                mtrack.id = track.SNG_ID;
+                mtrack.title = track.SNG_TITLE;
+                mtrack.artist = track.ART_NAME;
+                mtrack.duration = track.DURATION;
+                mtrack.genre = new string[0];
+                mtrack.albumart = track.ALB_PICTURE;
+                mtrack.year = track.PHYSICAL_RELEASE_DATE;
+                mtrack.album = track.ALB_TITLE;
+                mtrack.date = track.PHYSICAL_RELEASE_DATE;
+                mtrack.isrc = track.ISRC;
+                mdata.Add(mtrack);
+            }
+
+            return mdata;
         }
 
         public async Task<Lyrics> GetTrackLyrics(string SongID)

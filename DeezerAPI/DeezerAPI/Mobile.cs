@@ -1,7 +1,7 @@
 ﻿using DeezerAPI.Mobile.Models.Album;
 using DeezerAPI.Mobile.Models.Lyrics;
 using DeezerAPI.Mobile.Models.Playlist;
-using DeezerAPI.Mobile.Models.Track;
+using DeezerAPI.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -23,14 +23,14 @@ namespace DeezerAPI
         /// </summary>
         /// <param name="SongID">Deezer Track ID</param>
         /// <returns></returns>
-        public async Task<Track> GetTrack(string SongID) { return new Track() { }; }
+        public async Task<Metadata> GetTrack(string SongID) { return new Metadata() { }; }
 
         /// <summary>
         /// Get Tracks by IDs
         /// </summary>
         /// <param name="SongIDs">List of Track IDs</param>
         /// <returns></returns>
-        public async Task<Tracks> GetTracks(List<string> SongIDs) { return new Tracks() { }; }
+        public async Task<List<Metadata>> GetTracks(List<string> SongIDs) { return new List<Metadata>() { }; }
 
         /// <summary>
         /// Get Track Lyrics by ID
@@ -72,7 +72,7 @@ namespace DeezerAPI
         /// </summary>
         /// <param name="SongIDs">List of Track IDs</param>
         /// <returns></returns>
-        public async Task<Tracks> GetTracks(List<string> SongIDs) { return new Tracks() { }; }
+        public async Task<List<Metadata>> GetTracks(List<string> SongIDs) { return new List<Metadata>() { }; }
 
         /// <summary>
         /// Get Track Lyrics by ID
