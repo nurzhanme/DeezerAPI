@@ -74,8 +74,5 @@ namespace DeezerAPI.Mobile.Models.Playlist
 
         [JsonProperty("IS_EDITO", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsEdito { get; set; }
-
-        [JsonProperty("__TYPE__", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResultsType { get; set; }
     }
 }

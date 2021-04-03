@@ -81,8 +81,6 @@ namespace DeezerAPI.Mobile.Models.Album
         [JsonProperty("UPC", NullValueHandling = NullValueHandling.Ignore)]
         public string Upc { get; set; }
 
-        [JsonProperty("__TYPE__", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResultsType { get; set; }
     }
 
     public partial class AlbContributors
@@ -111,32 +109,6 @@ namespace DeezerAPI.Mobile.Models.Album
         [JsonProperty("RANK", NullValueHandling = NullValueHandling.Ignore)]
         public long? Rank { get; set; }
 
-        [JsonProperty("LOCALES", NullValueHandling = NullValueHandling.Ignore)]
-        public dynamic? Locales { get; set; }
-
-        [JsonProperty("ARTIST_IS_DUMMY", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? ArtistIsDummy { get; set; }
-
-        [JsonProperty("__TYPE__", NullValueHandling = NullValueHandling.Ignore)]
-        public string Type { get; set; }
-    }
-
-    public partial class Locales
-    {
-        [JsonProperty("lang_ja-jpan", NullValueHandling = NullValueHandling.Ignore)]
-        public Lang? LangJaJpan { get; set; }
-
-        [JsonProperty("lang_ja-hrkt", NullValueHandling = NullValueHandling.Ignore)]
-        public Lang? LangJaHrkt { get; set; }
-
-        [JsonProperty("lang_zh-hant", NullValueHandling = NullValueHandling.Ignore)]
-        public Lang? LangZhHant { get; set; }
-    }
-
-    public partial class Lang
-    {
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string? Name { get; set; }
     }
 
     public partial class ExplicitAlbumContent
