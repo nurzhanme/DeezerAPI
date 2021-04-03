@@ -1,4 +1,5 @@
-﻿using DeezerAPI.Mobile.Models.Track;
+﻿using DeezerAPI.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
@@ -27,7 +28,7 @@ namespace DeezerAPI.Test.Mobile
         public async Task TestTrackType(string id)
         {
             var res = await client.GetTrack(id);
-            Assert.IsType<Track>(res);
+            Assert.IsType<Metadata>(res);
         }
 
         [Theory]
@@ -43,7 +44,7 @@ namespace DeezerAPI.Test.Mobile
         public async Task TestTracksType(params string[] id)
         {
             var res = await client.GetTracks(id.ToList());
-            Assert.IsType<Tracks>(res);
+            Assert.IsType<List<Metadata>>(res);
         }
 
     }
