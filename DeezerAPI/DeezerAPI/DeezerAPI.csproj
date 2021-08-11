@@ -4,11 +4,21 @@
     <TargetFramework>net5.0</TargetFramework>
     <Authors>BackInBash</Authors>
     <Version>1.2.0</Version>
-    <Copyright>BackInBash 2021</Copyright>
+    <Copyright>BackInBash © 2021</Copyright>
+    <PackageProjectUrl>https://github.com/BackInBash/DeezerAPI</PackageProjectUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
