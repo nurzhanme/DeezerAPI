@@ -2,12 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Authors>BackInBash</Authors>
+    <Authors>nurzhan</Authors>
     <Version>1.2.0</Version>
-    <Copyright>BackInBash © 2021</Copyright>
-    <PackageProjectUrl>https://github.com/BackInBash/DeezerAPI</PackageProjectUrl>
+    <Copyright></Copyright>
+    <PackageProjectUrl>https://github.com/nurzhanme/DeezerAPI</PackageProjectUrl>
     <RepositoryType>GIT</RepositoryType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/nurzhanme/DeezerAPI</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
